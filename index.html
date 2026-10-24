@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Embedding the Verified by ProvenVerdicts badge</title>
+  <meta name="description" content="How a law firm embeds its Verified by ProvenVerdicts badge: the snippet, the light and dark versions, the per-result badge, and the rules that keep the badge meaningful.">
+  <link rel="canonical" href="https://provenverdicts-com.github.io/">
+  <style>
+    :root { color-scheme: light; }
+    body { margin: 0; font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; color: #0f1b2d; background: #fff; }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+    h1 { font-size: 30px; line-height: 1.15; margin: 0 0 12px; letter-spacing: -0.02em; }
+    h2 { font-size: 20px; margin: 40px 0 10px; }
+    p, li { color: #2c3a4d; }
+    a { color: #1657d6; }
+    code, pre { font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    pre { background: #f4f6fa; border: 1px solid #d6deea; border-radius: 8px; padding: 14px 16px; overflow-x: auto; white-space: pre-wrap; word-break: break-all; }
+    .sample { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; padding: 16px; border: 1px solid #d6deea; border-radius: 8px; }
+    .sample.dark { background: #0f1b2d; }
+    .note { font-size: 13px; color: #6b7280; }
+    footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid #d6deea; font-size: 14px; color: #5a6675; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Embedding the Verified by ProvenVerdicts badge</h1>
+  <p>
+    <a href="https://provenverdicts.com">ProvenVerdicts</a> is an independent directory of personal injury
+    attorneys and law firms across the United States. Every verdict and settlement it lists is documented from
+    court records, legal press or the firm's own filings before it is published. A firm with verified results
+    can show that on its own site with a badge that links to its ProvenVerdicts page, where visitors can read
+    each result and its sources.
+  </p>
+
+  <h2>What the badge looks like</h2>
+  <div class="sample">
+    <img src="https://provenverdicts.com/badge/the-orlow-firm.svg" alt="Verified case results on ProvenVerdicts.com" width="232" height="56">
+    <span class="note">Light, for white and pale backgrounds.</span>
+  </div>
+  <p></p>
+  <div class="sample dark">
+    <img src="https://provenverdicts.com/badge/the-orlow-firm.svg?theme=dark" alt="Verified case results on ProvenVerdicts.com" width="232" height="56">
+    <span class="note">Dark, for navy and black backgrounds (<code>?theme=dark</code>).</span>
+  </div>
+  <p class="note">The badge is an SVG served by ProvenVerdicts, so the count on it updates by itself as new results are verified.</p>
+
+  <h2>The snippet</h2>
+  <p>
+    Replace <code>your-firm</code> with your firm's slug, the last part of your ProvenVerdicts address
+    (<code>provenverdicts.com/<strong>your-firm</strong></code>). Your badge page,
+    <code>provenverdicts.com/your-firm/badge</code>, has this code pre-filled with a copy button.
+  </p>
+<pre>&lt;a href="https://provenverdicts.com/your-firm/proven-verdicts?utm_source=badge" target="_blank" rel="noopener" title="Verified case results on ProvenVerdicts.com"&gt;
+  &lt;img src="https://provenverdicts.com/badge/your-firm.svg" alt="Verified case results on ProvenVerdicts.com" width="232" height="56" style="border:0"&gt;
+&lt;/a&gt;
+&lt;p style="margin:6px 0 0;font:12px/1.4 system-ui,sans-serif;color:#6b7280"&gt;Prior results do not guarantee a similar outcome. Each case is unique and depends on its own facts.&lt;/p&gt;</pre>
+  <p>For a dark background, add <code>?theme=dark</code> to the image address.</p>
+
+  <h2>One badge per result</h2>
+  <p>
+    Each verified result also has its own badge, linking straight to that result's write-up. The image address is
+    <code>https://provenverdicts.com/badge/your-firm/<strong>result-slug</strong>.svg</code>, and the link goes to the
+    result page. Your badge page lists every one of yours with the code ready to copy.
+  </p>
+
+  <h2>Rules</h2>
+  <ul>
+    <li>Use the badge as served. Do not edit the image, change its colours or recreate it.</li>
+    <li>Keep the link to your ProvenVerdicts page on the badge. The badge is a claim; the link is the proof.</li>
+    <li>Keep the one-line note under it. State bar advertising rules in most states require it next to any mention of past results.</li>
+    <li>Only a firm or attorney with verified results on ProvenVerdicts may show the badge. It cannot be bought, and it is removed when a listing's results are withdrawn.</li>
+  </ul>
+
+  <h2>Getting yours</h2>
+  <p>
+    Find your firm on <a href="https://provenverdicts.com">provenverdicts.com</a> and open its badge page, or
+    read <a href="https://provenverdicts.com/for-law-firms">how listings work for law firms</a>. How results
+    are verified is set out in the <a href="https://provenverdicts.com/methodology">methodology</a>. If a result of
+    yours is missing, submit it there with its documentation and the editorial team reviews it.
+  </p>
+
+  <footer>
+    Maintained by <a href="https://provenverdicts.com">ProvenVerdicts</a>, 1108 Cannon St E, Hamilton, ON L8L 2J6, Canada.
+    Questions: <a href="mailto:hello@provenverdicts.com">hello@provenverdicts.com</a>.
+  </footer>
+</main>
+</body>
+</html>
